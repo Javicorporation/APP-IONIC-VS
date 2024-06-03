@@ -26,6 +26,21 @@ export class InicioPage implements OnInit {
       name: 'Alert',
       redirectTo: '/alert'
     },
+    {
+      icon: 'person-circle-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar'
+    },
+    {
+      icon: 'download-outline',
+      name: 'Input',
+      redirectTo: '/input'
+    },
+    {
+      icon: 'hourglass-outline',
+      name: 'Date Time',
+      redirectTo: '/datetime'
+    },
   ];
 
 
