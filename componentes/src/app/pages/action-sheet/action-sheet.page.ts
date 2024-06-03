@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-action-sheet',
@@ -7,9 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionSheetPage implements OnInit {
 
-  constructor() { }
+  constructor(private actionSheetCtrl: ActionSheetController){}
 
   ngOnInit() {
+  }
+
+  onClick0() {
+  this.presentarActionSheet();
+  }
+
+  async presentarActionSheet(){
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Actions',
+      cssClass: 'my-custom-class',
+      buttons:[
+        {
+        text:'Delete',
+        role:'destructive',
+        icon:'trash-outline',
+        id: 'delete-button',
+        data:{type: 'delete'},
+        handler: () => { console.log('Delete clicked')}
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+          
+        }
+      ]
+
+
+
+
+    });
+    await actionSheet.present();
+
   }
 
 }
