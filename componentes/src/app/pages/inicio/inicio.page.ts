@@ -17,12 +17,12 @@ export class InicioPage implements OnInit {
 
   componentes: Componente[] = [
     {
-      icon: 'american-football-outline',
+      icon: 'file-tray-full-outline',
       name: 'Action Sheet',
       redirectTo: '/action-sheet'
     },
     {
-      icon: 'american-football-outline',
+      icon: 'warning-outline',
       name: 'Alert',
       redirectTo: '/alert'
     },
