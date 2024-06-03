@@ -20,6 +20,7 @@ export class ActionSheetPage implements OnInit {
   async presentarActionSheet(){
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Actions',
+      backdropDismiss: false,
       cssClass: 'my-custom-class',
       buttons:[
         {
@@ -53,6 +54,7 @@ export class ActionSheetPage implements OnInit {
         {
           text:'Cancel',
           icon:'close-outline',
+          cssClass: 'rojo',
           role: 'cancel',
           handler:() =>{console.log('');}
         }
