@@ -23,29 +23,46 @@ export class ActionSheetPage implements OnInit {
       cssClass: 'my-custom-class',
       buttons:[
         {
-        text:'Delete',
-        role:'destructive',
-        icon:'trash-outline',
-        id: 'delete-button',
-        data:{type: 'delete'},
-        handler: () => { console.log('Delete clicked')}
+          text:'Delete',
+          role:'destructive',
+          icon:'trash-outline',
+          cssClass: 'rojo',
+          id: 'delete-button',
+          data:{type: 'delete'},
+          handler: () => { console.log('Delete clicked');}
+        
         },
         {
+          text: 'Share',
+          icon: 'share-outline',
+          data:10,
+          handler:() => {console.log('Share clicked');}
+        },
+        {
+          text:'Play (open modal)',
+          icon:'caret-forward-circle-outline',
+          data: 'Data value',
+          handler:() =>{ console.log('Play clicked');}
 
         },
         {
-
+          text:'Favorite',
+          icon:'heart-outline',
+          handler:() =>{console.log('');}
         },
         {
-          
+          text:'Cancel',
+          icon:'close-outline',
+          role: 'cancel',
+          handler:() =>{console.log('');}
         }
       ]
 
-
-
-
     });
-    await actionSheet.present();
+    await actionSheet.present(); // presenta
+
+    const {role, data} = await actionSheet.onDidDismiss();
+    console.log('onDidDismiss resolved with role and data', role, data)
 
   }
 
