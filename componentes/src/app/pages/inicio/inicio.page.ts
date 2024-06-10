@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 
 interface Componente {
@@ -42,11 +43,12 @@ export class InicioPage implements OnInit {
       redirectTo: '/datetime'
     },
   ];
-
-
-  constructor() { }
+  constructor(private menuCtrl: MenuController){}
 
   ngOnInit() {
+  }
+  mostrarMenu(){
+    this.menuCtrl.open('first');
   }
 
 }
