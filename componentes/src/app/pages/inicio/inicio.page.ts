@@ -19,9 +19,11 @@ interface Componente {
 export class InicioPage implements OnInit {
 
   //componentes: Componente[] = [];
-  componentes!: Observable<Componente[]>;
+  componentes: Observable<Componente[]> = new Observable<Componente[]>();
 
-  constructor(private menuCtrl: MenuController, private dataService: DataService){}
+  constructor(private menuCtrl: MenuController, private dataService: DataService){
+
+  }
 
   ngOnInit() {
     this.componentes = this.dataService.getMenuOpts();

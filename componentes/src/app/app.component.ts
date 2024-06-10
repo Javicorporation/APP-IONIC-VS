@@ -9,7 +9,8 @@ import { DataService } from './services/data.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  componentes!: Observable<Componente[]>
+  componentes: Observable<Componente[]> = new Observable<Componente[]>();
+
   ngOnInit() {
     this.componentes = this.dataService.getMenuOpts(); 
   }
